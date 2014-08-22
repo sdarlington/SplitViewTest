@@ -44,6 +44,22 @@
     return cell;
 }
 
+/*
+ 
+ MARK: "working" version
+ 
+ This can be made to work as expected by deleting the "showDetail" segue from the search view controller
+ uncommenting the following method.
+ 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // the current view controller doesn't have the splitViewController which means that
+    // the detail gets presented without any knowlegde of the detail view... which means it
+    // doesn't get the back button (and likely looks bad on the iPad). So... we tell the
+    // parent to do the presenting instead
+    [self.presentingViewController performSegueWithIdentifier:@"showDetail" sender:self];
+}
+*/
+
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
     
 }
